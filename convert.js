@@ -64,10 +64,7 @@ let js = (clazz, title, code, icon) => {
         /((?:^|\s)\/\/[^\n]*)/g,
         "<span class=comment>$1</span>")
     code = code.replace(
-        /\|\|/g,
-        "<code>&#124&#124</code>")
-    code = code.replace(
-        /\|(.+?)\|/g,
+        /\|((?:\|\||[^\|])+)\|/g,
         "<span class=mark>$1</span>")
     code = code.replace(/@3@/g, "|");
     code = code.replace(/class=([a-z]+)/g, "class=\"$1\"")
